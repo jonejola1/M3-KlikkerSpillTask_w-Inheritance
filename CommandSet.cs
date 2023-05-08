@@ -7,11 +7,11 @@ internal class CommandSet
     {
         _commands = new Command[]
         {
-            new ExitCommand(),
             new ClickCommand(game),
             new UpgradeCommand(game),
             new SuperUpgradeCommand(game),
             new MegaUpgradeCommand(game),
+            new ExitCommand(),
         };
     }
 
@@ -21,13 +21,20 @@ internal class CommandSet
         command?.Run();
     }
 
-    private Command FindCommand(char commandChar)
+    private Command? FindCommand(char commandChar)
     {
+        return _commands.FirstOrDefault(command => command.Character == commandChar);
+    }
+
+    public void PrintCommands()
+    {
+        var commandListMenu = "";
         foreach (var command in _commands)
         {
-            if (commandChar == command.Character) return command;
+            commandListMenu += command.Description;
         }
-        return null;
+        Console.WriteLine("Kommandoer:");
+        Console.WriteLine(commandListMenu);
     }
 }
 

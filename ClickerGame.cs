@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace M3_KlikkerSpillTask;
+﻿namespace M3_KlikkerSpillTask;
 
 internal class ClickerGame
 {

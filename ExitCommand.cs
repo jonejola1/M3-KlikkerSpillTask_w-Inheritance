@@ -5,7 +5,7 @@ internal class ExitCommand : Command
     public ExitCommand()
     {
         Character = 'X';
-        Description = "- X = avslutt applikasjonen";
+        Description = " - X = avslutt applikasjonen";
     }
     public override void Run()
     {
