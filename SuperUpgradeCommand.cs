@@ -6,10 +6,13 @@ internal class SuperUpgradeCommand : Command
     {
         Game = game;
         Character = 'S';
-        Description = " - S = kjøp superoppgradering \n       øker \"poeng per klikk\" for den vanlige oppgraderingen.\n       koster 100 poeng\n";
     }
     public override void Run()
     {
         Game?.SuperUpgrade();
+    }
+    public override string GetDescription()
+    {
+        return " - S = kjøp superoppgradering \n       øker \"poeng per klikk\" for den vanlige oppgraderingen.\n       koster 100 poeng\n";
     }
 }

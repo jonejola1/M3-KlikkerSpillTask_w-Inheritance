@@ -1,4 +1,6 @@
-﻿namespace M3_KlikkerSpillTask;
+﻿using System.Text;
+
+namespace M3_KlikkerSpillTask;
 
 internal class CommandSet
 {
@@ -23,16 +25,16 @@ internal class CommandSet
 
     private Command? FindCommand(char commandChar)
     {
-        return _commands.FirstOrDefault(command => command.Character == commandChar);
+        return _commands.FirstOrDefault(command 
+            => command.Character == commandChar);
     }
 
     public void PrintCommands()
     {
-        var commandListMenu = "";
-        foreach (var command in _commands)
-        {
-            commandListMenu += command.Description;
-        }
+        var commandListMenu = _commands.Aggregate(
+            new StringBuilder(), 
+            (current, command) => current.Append(command.GetDescription()),
+            current => current.ToString());
         Console.WriteLine("Kommandoer:");
         Console.WriteLine(commandListMenu);
     }

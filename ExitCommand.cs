@@ -5,10 +5,14 @@ internal class ExitCommand : Command
     public ExitCommand()
     {
         Character = 'X';
-        Description = " - X = avslutt applikasjonen";
     }
     public override void Run()
     {
         Environment.Exit(0);
+    }
+
+    public override string GetDescription()
+    {
+        return " - X = avslutt applikasjonen";
     }
 }

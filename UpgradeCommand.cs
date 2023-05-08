@@ -1,4 +1,6 @@
-﻿namespace M3_KlikkerSpillTask;
+﻿using System.Security.Cryptography;
+
+namespace M3_KlikkerSpillTask;
 
 internal class UpgradeCommand : Command
 {
@@ -6,10 +8,14 @@ internal class UpgradeCommand : Command
     {
         Game = game;
         Character = 'K';
-        Description = " - K = kjøp oppgradering \n       øker poeng per klikk \n       koster 10 poeng\n";
     }
     public override void Run()
     {
         Game?.Upgrade();
-    } 
+    }
+
+    public override string GetDescription()
+    {
+        return " - K = kjøp oppgradering \n       øker poeng per klikk \n       koster 10 poeng\n";
+    }
 }

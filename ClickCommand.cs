@@ -6,11 +6,14 @@ internal sealed class ClickCommand : Command
     {
         Game = game;
         Character = ' ';
-        Description = "- SPACE = klikk (og få poeng)\n";
     }
 
     public override void Run()
     {
         Game?.Click();
+    }
+    public override string GetDescription()
+    {
+        return "- SPACE = klikk (og få poeng)\n";
     }
 }
